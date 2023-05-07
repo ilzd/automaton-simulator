@@ -1,0 +1,39 @@
+export enum GameState {
+  WAITING_DICE_ROLL
+}
+
+export enum GameEvents {
+  // REQUEST_ROLL = 'REQUEST_ROLL',
+  // DICE_VALUE = 'DICE_VALUE',
+  REQUEST_CARD_DECISION = 'REQUEST_CARD_DECISION',
+  REQUEST_CARD_CONFIRMATION = 'REQUEST_CARD_CONFIRMATION',
+  REQUEST_ITEM_CHOICE = 'REQUEST_ITEM_CHOICE',
+  REQUEST_ITEMS_PURCHASE = 'REQUEST_ITEMS_PURCHASE'
+}
+
+export const STARTING_CREDITS = 10
+export const ITEMS_COUNT = 4
+
+export const NPC_ID_PREFIX = 'npc-player'
+
+export const DICE_ROLL_DELAY = 3000
+export const CHOOSE_PATH_DELAY = 250
+export const CHOOSE_CARD_OPTION_DELAY = 2000
+export const STEP_DURATION = 500
+export const MOVE_DELAY = 1000
+export const START_MATCH_DELAY = 3500
+export const PREPARE_MATCH_DELAY = 2000
+export const START_TURN_DELAY = 1000
+export const END_MATCH_DELAY = 2000
+export const PLAYER_PURCHASE_DELAY = 1000
+export const END_TURN_DELAY = 1500
+export const PLAYERS_FINISHED_DELAY = 1500
+export const CARD_DECISION_DELAY = 1000
+export const CARD_CONFIRMATION_DELAY = 1000
+export const NPC_DELAY = 2000
+
+export const CAMERA_TRANSITION_DELAY = 1640
+
+export const SERVER_DATA_KEY = 'server'
+export const USER_ID_KEY = 'userId'
+export const USER_NAME_KEY = 'userName'
