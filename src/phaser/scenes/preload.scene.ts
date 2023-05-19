@@ -1,3 +1,5 @@
+import AutomatonScene from "./automaton.scene"
+
 export default class PreloadScene extends Phaser.Scene {
   public static readonly SCENE_KEY = 'preload-scene'
 
@@ -6,5 +8,9 @@ export default class PreloadScene extends Phaser.Scene {
   }
 
   preload () {
+  }
+
+  create () {
+    this.scene.start(AutomatonScene.SCENE_KEY)
   }
 }

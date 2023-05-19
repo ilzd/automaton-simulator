@@ -1,12 +1,13 @@
 import State from "./state";
 import Transition from "./transition";
-import ValidationStep from "./validation-step";
+import { AutomatonTest } from "./validation-step";
 
 export default abstract class Automaton {
   states: State[]
   startState: State
   acceptStates: State[]
   transitions: Transition[]
+  private lastStateId = 0
 
   constructor () {
     this.states = []
@@ -15,9 +16,11 @@ export default abstract class Automaton {
     this.transitions = []
   }
 
-  addState (state: State) {
-    if (this.states.includes(state)) return
-    this.states.push(state)
+  addState () {
+    const newState: State = { id: this.lastStateId, name: `S${this.lastStateId}` }
+    this.states.push(newState)
+    this.lastStateId++
+    return newState
   }
 
   removeState (state: State) {
@@ -69,7 +72,6 @@ export default abstract class Automaton {
     this.transitions.splice(index, 1)
   }
 
-  abstract automatonIsValid (): boolean;
-  abstract validationSteps (): ValidationStep[];
-  abstract testString (str: String): boolean;
+  abstract automatonIsValid (): boolean
+  abstract testString (str: String): AutomatonTest
 }

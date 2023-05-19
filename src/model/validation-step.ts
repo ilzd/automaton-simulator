@@ -1,6 +1,11 @@
 import State from "./state";
 
-export default interface ValidationStep {
+export interface AutomatonTest {
+  steps: TestStep[]
+  valid: boolean
+}
+
+export interface TestStep {
   currStates: State[]
   remainingInput: string
 }
